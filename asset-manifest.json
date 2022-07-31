@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/trending-items/static/css/main.0e170fb8.css",
-    "main.js": "/trending-items/static/js/main.274d1855.js",
+    "main.css": "/trending-items/static/css/main.4de0fa12.css",
+    "main.js": "/trending-items/static/js/main.fa7642fd.js",
     "static/js/787.489ffdc4.chunk.js": "/trending-items/static/js/787.489ffdc4.chunk.js",
     "static/media/mandara.webp": "/trending-items/static/media/mandara.370a9c674e9708bbb32b.webp",
     "static/media/dirtdrifter.webp": "/trending-items/static/media/dirtdrifter.a0acd2a4e6a6e311acd7.webp",
@@ -11,12 +11,12 @@
     "static/media/velossi.webp": "/trending-items/static/media/velossi.b41be2bb966d45bd41ca.webp",
     "static/media/etevo.webp": "/trending-items/static/media/etevo.b4bbdca5f5395096ba51.webp",
     "index.html": "/trending-items/index.html",
-    "main.0e170fb8.css.map": "/trending-items/static/css/main.0e170fb8.css.map",
-    "main.274d1855.js.map": "/trending-items/static/js/main.274d1855.js.map",
+    "main.4de0fa12.css.map": "/trending-items/static/css/main.4de0fa12.css.map",
+    "main.fa7642fd.js.map": "/trending-items/static/js/main.fa7642fd.js.map",
     "787.489ffdc4.chunk.js.map": "/trending-items/static/js/787.489ffdc4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0e170fb8.css",
-    "static/js/main.274d1855.js"
+    "static/css/main.4de0fa12.css",
+    "static/js/main.fa7642fd.js"
   ]
 }
