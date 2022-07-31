@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import { cleanText } from "./utils/data";
+import { useState, useEffect } from "react";
+import { parser, dataStandardizer, dataAggregator } from "./utils/functions";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import NavigationBar from "./components/NavigationBar";
+import "./App.css";
+import Displayer from "./components/Displayer";
 
 function App() {
+  const [data, setData] = useState([]);
+  const [trenders, setTrenders] = useState([]);
+
+  useEffect(() => {
+    const parsedData = parser(cleanText);
+    setData(parsedData);
+  }, []);
+
+  useEffect(() => {
+    const standardizedData = dataStandardizer(data);
+
+    const aggregatedData = dataAggregator(standardizedData)
+    
+    const trending = aggregatedData
+      .sort((a, b) => (a[1] < b[1] ? 1 : -1))
+      .slice(0,3)
+
+    setTrenders(trending)
+    
+  }, [data]);
+  
+  console.log("this is the STATE data", data);
+  console.log("this is the STATE trenders", trenders)
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div data-testid='test-0'>
+      <NavigationBar/>
+      <Displayer trenders={trenders}/>
     </div>
   );
 }
 
 export default App;
+
