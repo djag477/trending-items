@@ -1,4 +1,4 @@
-import { validators } from "./dataValidators";
+import { validators } from "./dataValidators"; // array of regular expressions. if true, means a substring has a "\n" in the right place
 
 const text = `ID,Make,Model,Price,UserID,Date
 43,Gudereit,EC-5,899,434,2021-05-15
@@ -18,18 +18,17 @@ Bikes,Dirt-Drifter-3000,1600,387,2021-05-20
 178,Diamant,beryll,2600,488,2021-06-27
 190,Diamant,Mandara,999,420,2021-07-17`;
 
-const textCleaner = (str) => str
-  .split(",")
-  .map((elem) => {
-    let counter = 0;
-    validators.forEach((validator) => {
-      if (validator.test(elem)) counter++;
-    });
-    if (!counter) elem = elem.replace("\n", " ");
-    return elem;
-  })
-  .join(",");
+const textCleaner = (str) =>
+  str
+    .split(",") // after taking the original string, it splits it to make sure there are no new lines in the middle of what should a unique value
+    .map((elem) => {
+      let counter = 0;
+      validators.forEach((validator) => {
+        if (validator.test(elem)) counter++; //if the substring evaluates to true the counter goes up
+      });
+      if (!counter) elem = elem.replace("\n", " "); //there's more than one criteria in this case (see dataValidators), if none of them is met, counter === 0 and any "\n" should be replced by a " "
+      return elem;
+    })
+    .join(","); // then bring it back a unique string, to properly split by "\n" when needed
 
-export const cleanText = textCleaner(text)
-
-
+export const cleanText = textCleaner(text);

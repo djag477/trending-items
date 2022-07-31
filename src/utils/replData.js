@@ -1,3 +1,7 @@
+/* An object per bicycle model
+with a Repl (umbrella model name) and Picture 
+and regular expressions to do the matchi and assigning of the Repl and Picture*/
+
 const ecfive = {
   model: "EC 5",
   picture: "ec.webp",
@@ -47,5 +51,3 @@ export const replData = [
   velossi,
   mandara,
 ];
-
-
