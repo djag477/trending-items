@@ -45,7 +45,7 @@ function App() {
   return (
     <div data-testid="test-0">
       <NavigationBar />
-      <Displayer trenders={trenders} />{" "}
+      <Displayer trenders={trenders} />
       {/* Props are drilled into the card components displayed in this component, which could end up displaying more items if necessary */}
     </div>
   );
